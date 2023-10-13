@@ -11,6 +11,8 @@ services:
        POSTGRES_PASSWORD: postgres
        POSTGRES_DB: app
      restart: always
+     networks:
+       - webapp_network
    migration:
      build: .
      container_name: webapp_db_migration_container
@@ -23,5 +25,9 @@ services:
      depends_on:
        - db
      restart: always
-
+     networks:
+       - webapp_network
+networks:
+  webapp_network:
+    name: webapp_network
 
