@@ -46,12 +46,12 @@ jobs:
           SPRING_DATASOURCE_PASSWORD: postgres
         run: mvn clean install
 
-      - name: Flyway Migration
-        run: mvn flyway:migrate -X
-        env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/app
-          SPRING_DATASOURCE_USERNAME: postgres
-          SPRING_DATASOURCE_PASSWORD: postgres
+#      - name: Flyway Migration
+#        run: mvn flyway:migrate -X
+#        env:
+#          SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/app
+#          SPRING_DATASOURCE_USERNAME: postgres
+#          SPRING_DATASOURCE_PASSWORD: postgres
 
       - name: Run Maven Tests
         run: mvn test
