@@ -2,7 +2,7 @@ name: Spring Boot Github Actions Workflow with PostgreSQL and Flyway
 
 on:
   workflow_dispatch:
-    pull_request:
+  pull_request:
       branches: [ main ]
 
 jobs:
