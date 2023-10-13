@@ -1,5 +1,7 @@
-FROM openjdk:17
+FROM openjdk:17-oracle
 
-COPY target/test-webapp-0.0.1-SNAPSHOT.jar test-webapp-0.0.1-SNAPSHOT.jar
+COPY target/*.jar webapp-db-migration.jar
 
-ENTRYPOINT ["java", "-jar", "/test-webapp-0.0.1-SNAPSHOT.jar"]
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "webapp-db-migration.jar"]
