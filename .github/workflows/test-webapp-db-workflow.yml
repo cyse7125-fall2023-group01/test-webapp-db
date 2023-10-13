@@ -41,7 +41,7 @@ jobs:
 
       - name: Build with Maven
         env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/app
+          SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/app
           SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: postgres
         run: mvn clean install
@@ -49,13 +49,13 @@ jobs:
       - name: Flyway Migration
         run: mvn flyway:migrate
         env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/app
+          SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/app
           SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: postgres
 
       - name: Run Maven Tests
         run: mvn test
         env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/app
+          SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/app
           SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: postgres
