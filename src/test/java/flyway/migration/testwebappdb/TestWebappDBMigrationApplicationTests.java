@@ -8,6 +8,6 @@ class TestWebappDBMigrationApplicationTests {
 
     @Test
     void contextLoads() {
-    }
+
 
 }
